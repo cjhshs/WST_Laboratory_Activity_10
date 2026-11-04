@@ -1,0 +1,392 @@
+:root {
+    --bg: #0f172a;
+    --bg-soft: #1e293b;
+    --card: #ffffff;
+    --text: #0f172a;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --accent: #2563eb;
+    --accent-dark: #1d4ed8;
+    --success-bg: #ecfdf5;
+    --success-text: #047857;
+    --error-bg: #fef2f2;
+    --error-text: #b91c1c;
+    --radius: 14px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+    color: var(--text);
+    background: #f1f5f9;
+    line-height: 1.55;
+}
+
+/* ---------- Auth pages (register / login / 403) ---------- */
+
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: radial-gradient(circle at 20% 15%, #1e3a8a 0, transparent 45%),
+                radial-gradient(circle at 85% 85%, #0e7490 0, transparent 40%),
+                var(--bg);
+}
+
+.card {
+    width: 100%;
+    max-width: 460px;
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 32px;
+    box-shadow: 0 20px 45px rgba(2, 6, 23, 0.28);
+}
+
+.page .card {
+    max-width: 860px;
+    margin: 0 auto 24px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+h1 {
+    margin: 0 0 4px;
+    font-size: 1.65rem;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    margin: 0 0 16px;
+    font-size: 1.15rem;
+}
+
+.subtitle {
+    margin: 0 0 24px;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+label {
+    display: block;
+    margin: 18px 0 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 11px 13px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    font: inherit;
+    color: var(--text);
+    background: #f8fafc;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    background: #fff;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 96px;
+}
+
+.hint {
+    margin: 6px 0 0;
+    font-size: 0.82rem;
+    color: var(--muted);
+}
+
+.btn {
+    display: inline-block;
+    width: 100%;
+    margin-top: 22px;
+    padding: 12px 16px;
+    border: 0;
+    border-radius: 9px;
+    background: var(--accent);
+    color: #fff;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.btn:hover {
+    background: var(--accent-dark);
+}
+
+.switch {
+    margin: 20px 0 0;
+    font-size: 0.9rem;
+    color: var(--muted);
+    text-align: center;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Alerts ---------- */
+
+.alert {
+    padding: 12px 14px;
+    border-radius: 9px;
+    font-size: 0.9rem;
+    border: 1px solid transparent;
+}
+
+.alert-error {
+    background: var(--error-bg);
+    color: var(--error-text);
+    border-color: #fecaca;
+}
+
+.alert-success {
+    background: var(--success-bg);
+    color: var(--success-text);
+    border-color: #a7f3d0;
+}
+
+/* ---------- App shell ---------- */
+
+.topbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 28px;
+    background: var(--bg);
+    color: #e2e8f0;
+}
+
+.brand {
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.topbar nav {
+    display: flex;
+    gap: 18px;
+    font-size: 0.9rem;
+}
+
+.topbar a {
+    color: #cbd5e1;
+}
+
+.topbar a:hover {
+    color: #fff;
+}
+
+.topbar a.logout {
+    color: #fca5a5;
+}
+
+.page {
+    padding: 32px 24px 48px;
+}
+
+.welcome {
+    margin: 0 0 8px;
+    font-size: 1.05rem;
+}
+
+.badge {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 2px 9px;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    vertical-align: middle;
+}
+
+.badge-student {
+    background: #e0e7ff;
+    color: #3730a3;
+}
+
+.badge-admin {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.status-code {
+    margin: 0 0 6px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+}
+
+/* ---------- Dashboard links ---------- */
+
+.link-list {
+    list-style: none;
+    margin: 28px 0 0;
+    padding: 0;
+    display: grid;
+    gap: 12px;
+}
+
+.link-list a {
+    display: block;
+    padding: 16px;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    color: inherit;
+    transition: border-color 0.15s, transform 0.15s;
+}
+
+.link-list a:hover {
+    border-color: var(--accent);
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
+.link-list strong {
+    display: block;
+    color: var(--accent);
+}
+
+.link-list span {
+    color: var(--muted);
+    font-size: 0.88rem;
+}
+
+/* ---------- Admin stats and table ---------- */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin: 22px 0 30px;
+}
+
+.stat {
+    padding: 16px;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    background: #f8fafc;
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.stat-label {
+    color: var(--muted);
+    font-size: 0.82rem;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+th,
+td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+}
+
+th {
+    background: #f8fafc;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+}
+
+/* ---------- Comments ---------- */
+
+.count {
+    margin-left: 6px;
+    padding: 1px 8px;
+    border-radius: 999px;
+    background: #e2e8f0;
+    color: #475569;
+    font-size: 0.78rem;
+}
+
+.empty {
+    color: var(--muted);
+    font-size: 0.92rem;
+}
+
+.comment-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 14px;
+}
+
+.comment {
+    padding: 14px 16px;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    background: #fcfdff;
+}
+
+.comment-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.comment-meta strong {
+    font-size: 0.9rem;
+}
+
+.comment-meta time {
+    color: var(--muted);
+    font-size: 0.78rem;
+}
+
+.comment-body {
+    margin: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+/* Keep long unbroken test strings from stretching the layout. */
+.comment-body,
+td {
+    word-break: break-word;
+}
